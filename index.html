@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCI 4830/6830 VR Showcase - Fall 2025</title>
+    <style>
+        :root {
+            --uga-red: #BA0C2F;
+            --uga-black: #000000;
+            --dark-gray: #333333;
+            --light-gray: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background-color: var(--uga-black);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 6px solid var(--uga-red);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header h2 {
+            font-weight: 300;
+            font-size: 1.5rem;
+            color: #ccc;
+        }
+
+        /* Event Info Banner */
+        .event-banner {
+            background-color: var(--uga-red);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .event-banner strong {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-banner a {
+            color: var(--white);
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .event-banner a:hover {
+            color: var(--uga-black);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Course Description Section */
+        .description-section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--uga-red);
+        }
+
+        .description-section h3 {
+            color: var(--uga-black);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .description-section p {
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Grid */
+        .projects-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--uga-black);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Project Card */
+        .project-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            border-top: 4px solid var(--uga-black);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-top: 4px solid var(--uga-red);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--uga-red);
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--uga-black);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--uga-red);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--uga-black);
+            color: #ccc;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--uga-red);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .event-banner strong { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CSCI 4830/6830 Virtual Reality</h1>
+        <h2>Fall 2025 Final Project Showcase</h2>
+    </header>
+
+    <section class="event-banner">
+        <strong>Public Demonstration Session</strong>
+        <p>Tuesday, December 9th | 12:15 PM - 2:45 PM</p>
+        <p>
+            Miller Learning Center, Creative Engagement Wing<br>
+            <a href="https://www.libs.uga.edu/mlc/al-vr-classroom" target="_blank">VR Lab, 3rd Floor</a>
+        </p>
+    </section>
+
+    <div class="container">
+        
+        <section class="description-section">
+            <h3>About the Projects</h3>
+            <p>
+                This final project is the culmination of the skills students have developed throughout the semester in the CSCI 4830/6830 Virtual Reality course. Working in teams, students were tasked to design, develop, and demonstrate a collaborative Mixed Reality (MR) or Virtual Reality (VR) application.
+            </p>
+            <p>
+                The goal for each team was to create a functional and polished experience designed to teach or practice a useful skill. These applications go beyond pure entertainment; they represent complex technical achievements that meet rigorous requirements:
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px; color: #444;">
+                <li style="margin-bottom: 8px;"><strong>Collaborative Multi-User Experience:</strong> Multiple users interact simultaneously within a shared virtual environment.</li>
+                <li style="margin-bottom: 8px;"><strong>AI-Driven Characters:</strong> Each scene features intelligent NPCs that users interact with via voice, gestures, or actions.</li>
+                <li style="margin-bottom: 8px;"><strong>Advanced Interaction:</strong> Projects utilize intuitive UI systems, custom avatars for VR presence, or spatial anchors for persistent Mixed Reality alignment.</li>
+            </ul>
+        </section>
+
+        <h2 class="projects-header">Student Projects</h2>
+
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="card-body">
+                    <h3 class="project-title">VR Nest: Multiplayer Museum Adventure</h3>
+                    <p class="project-desc">A collaborative museum experience designed for multiplayer exploration.</p>
+                    <a href="https://ugavr2025.github.io/final-project-website-vr-nest/index.html" class="btn" target="_blank">View Project</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-body">
+                    <h3 class="project-title">Virtual Classroom</h3>
+                    <p class="project-desc">An immersive educational environment for remote learning and collaboration.</p>
+                    <a href="https://ugavr2025.github.io/final-project-website-best-team/" class="btn" target="_blank">View Project</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-body">
+                    <h3 class="project-title">Mixed Reality Productivity App</h3>
+                    <p class="project-desc">Enhancing workflow and task management through mixed reality overlays.</p>
+                    <a href="https://ugavr2025.github.io/final-project-website-bestest-team/" class="btn" target="_blank">View Project</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-body">
+                    <h3 class="project-title">ImmersiveDawgs</h3>
+                    <p class="project-desc">A specialized Virtual Reality volleyball training simulation.</p>
+                    <a href="https://ugavr2025.github.io/final-project-website-immersivedawgs/" class="btn" target="_blank">View Project</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-body">
+                    <h3 class="project-title">Spatial Music Visualization</h3>
+                    <p class="project-desc">An interactive experience visualizing audio in 3D space.</p>
+                    <a href="https://ugavr2025.github.io/final-project-website-kar/" class="btn" target="_blank">View Project</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-body">
+                    <h3 class="project-title">Decider VR</h3>
+                    <p class="project-desc">A VR experience focused on decision-making scenarios.</p>
+                    <a href="https://ugavr2025.github.io/final-project-website-klumbs/" class="btn" target="_blank">View Project</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-body">
+                    <h3 class="project-title">Virtual Sculpture / 3D Painting Studio</h3>
+                    <p class="project-desc">A creative studio for sculpting and painting in a virtual environment.</p>
+                    <a href="https://ugavr2025.github.io/final-project-website-rcr/" class="btn" target="_blank">View Project</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-body">
+                    <h3 class="project-title">Fab Lab Training</h3>
+                    <p class="project-desc">Training simulation for operating fabrication laboratory equipment.</p>
+                    <a href="https://ugavr2025.github.io/final-project-website-senior-syndicate/" class="btn" target="_blank">View Project</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-body">
+                    <h3 class="project-title">Muse Motion</h3>
+                    <p class="project-desc">Exploring movement and creativity within a virtual space.</p>
+                    <a href="https://ugavr2025.github.io/final-project-website-team-jab/" class="btn" target="_blank">View Project</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-body">
+                    <h3 class="project-title">VR Chaotic Kitchen</h3>
+                    <p class="project-desc">A high-energy, two-player cooking show experience in VR.</p>
+                    <a href="https://ugavr2025.github.io/final-project-website-uga-vr-final/" class="btn" target="_blank">View Project</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-body">
+                    <h3 class="project-title">Class VR</h3>
+                    <p class="project-desc">An immersive VR classroom implementation.</p>
+                    <a href="https://ugavr2025.github.io/final-project-website-vr-final-hnd/" class="btn" target="_blank">View Project</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <footer>
+        <p>Course Instructor: Kyle Johnsen (<a href="mailto:kjohnsen@uga.edu">kjohnsen@uga.edu</a>)</p>
+        <p>&copy; 2025 University of Georgia</p>
+    </footer>
+
+</body>
+</html>
